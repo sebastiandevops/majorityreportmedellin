@@ -123,8 +123,8 @@ STATICFILES_DIRS = (
 )
 #############################################################
 #############################################################
-AWS_ACCESS_KEY_ID = os.environ.get('AKIAJSQYLCZ7IHGZTUFA')
-AWS_SECRET_ACCESS_KEY = os.environ.get('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')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'majoritybucket'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
