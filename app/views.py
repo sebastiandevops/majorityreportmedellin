@@ -20,6 +20,13 @@ def index(request):
     html_template = loader.get_template( 'index.html' )
     return HttpResponse(html_template.render(context, request))
 
+def medellincharts(request):
+    context = {}
+    context['segment'] = 'medellincharts'
+
+    html_template = loader.get_template( 'medellincharts.html' )
+    return HttpResponse(html_template.render(context, request))
+
 #@login_required(login_url="/login/")
 def pages(request):
     context = {}
