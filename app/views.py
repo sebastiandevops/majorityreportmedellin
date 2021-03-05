@@ -12,7 +12,9 @@ from django import template
 #@login_required(login_url="/login/")
 def index(request):
 
-    context = {}
+    context = {'title': 'Majority Report Medellín',
+               'subtitle': 'Bienvenidos',
+               'phrase': 'Esta es una página donde encontrará una forma de visualizar los índices de criminalidad en la ciudad de Medellín de manera interactiva'}
     context['segment'] = 'index'
 
     html_template = loader.get_template( 'index.html' )

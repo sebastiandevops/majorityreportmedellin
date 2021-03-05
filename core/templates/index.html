@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Majority Report Medellín{% endblock %}
+{% block title %} {{ title }} {% endblock %}
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -33,10 +33,10 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Bienvenidos</h5>
+                                    <h5> {{ subtitle }} </h5>
                                 </div>
                                 <div class="card-block">
-                                    <p>"Majority Report es una página de análisis de los datos de robos a personas en la ciudad de Medellín"
+                                    <p>{{ phrase }}
                                     </p>
                                 </div>
                             </div>
