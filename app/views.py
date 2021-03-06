@@ -14,7 +14,16 @@ def index(request):
 
     context = {'title': 'Majority Report Medellín',
                'subtitle': 'Bienvenidos',
-               'phrase': 'Esta es una página donde encontrará una forma de visualizar los índices de criminalidad en la ciudad de Medellín de manera interactiva'}
+               'tab_1_title':"Acerca de",
+               'tab_1_text': 'Esta es una página donde encontrará una forma de visualizar los índices de criminalidad en la ciudad de Medellín de manera interactiva',
+               'tab_2_title':"Datos",
+               'tab_2_text': "Acá explicamos otra cosa",
+               'tab_3_title':"Contacto",
+               'tab_3_text': "Estoy inventando",
+               'chart_1_title': "Gráfica 1 super bacana",
+               'chart_1':"",
+               'chart_2_title':"Gráfica 2 más genial",
+               'chart_2':""}
     context['segment'] = 'index'
 
     html_template = loader.get_template( 'index.html' )

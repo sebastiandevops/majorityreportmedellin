@@ -5,6 +5,7 @@
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
 
+
 {% block content %}
 
     <div class="pcoded-content">
@@ -15,7 +16,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="page-header-title">
-                                <h5 class="m-b-10">{{ title }}</h5>
+                                <h5 class="m-b-10">Sample Page</h5>
                             </div>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
@@ -31,18 +32,68 @@
                     <!-- [ Main Content ] start -->
                     <div class="row">
                         <div class="col-sm-12">
+                            <h5 class="mt-4">{{subtitle}}</h5>
+                                <hr>
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">{{tab_1_title}}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">{{tab_2_title}}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">{{tab_3_title}}</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                            <p class="mb-0"> {{tab_1_text}} </p>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                            <p class="mb-0"> {{tab_2_text}}  </p>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                            <p class="mb-0"> {{tab_3_text}} </p>
+                                        </div>
+                                    </div>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+
+                        <!-- [ Morris Chart ] start -->
+                        <div class="col-xl-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5> {{ subtitle }} </h5>
+                                    <h5>{{chart_1_title}}</h5>
                                 </div>
                                 <div class="card-block">
-                                    <p>{{ phrase }}
-                                    </p>
+                                    <!-- <div id="morris-bar-chart" style="height:300px"></div> -->
+                                    {% autoescape off %}
+                                    {{ chart_1 }}
+                                    {% endautoescape %}
                                 </div>
                             </div>
                         </div>
+                        <hr>
+                                                <!-- [ Morris Chart ] start -->
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>{{chart_2_title}}</h5>
+                                </div>
+                                <div class="card-block">
+                                    <!-- <div id="morris-bar-chart" style="height:300px"></div> -->
+                                    {% autoescape off %}
+                                    {{ chart_2 }}
+                                    {% endautoescape %}
+                                </div>
+                         </div>
+                        </div>
                     </div>
                     <!-- [ Main Content ] end -->
+
                 </div>
             </div>
         </div>

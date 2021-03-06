@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\first-django-app\\firstsite"
+		},
+		{
+			"path": "..\\.."
+		}
+	],
+	"settings": {}
+}
