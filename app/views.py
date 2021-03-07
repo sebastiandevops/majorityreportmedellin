@@ -25,13 +25,13 @@ def index(request):
                'subtitle': 'Bienvenidos',
                'tab_1_title':"Acerca de",
                'tab_1_text': 'Esta es una página donde encontrará una forma de visualizar los índices de criminalidad en la ciudad de Medellín de manera interactiva',
-               'tab_2_title':"Datos",
+               'tab_2_title':"Instrucciones",
                'tab_2_text': "Acá explicamos otra cosa",
                'tab_3_title':"Contacto",
                'tab_3_text': "Estoy inventando",
                'chart_1_title': "Cantidad de hurtos a personas por sexo de la víctima",
                'chart_1':"",
-               'chart_2_title':"Cantidad de hurtos a personas desde el año 2003 mes a mes",
+               'chart_2_title':"Cantidad de hurtos a personas mes a mes desde el 2003",
                'chart_2':""}
     context['chart_1'] = bar_chart(data, 'sexo', 'cantidad')
     context['chart_2'] = line_chart(data, 'año', 'mes', 'cantidad')
@@ -42,7 +42,7 @@ def index(request):
 
 def medellincharts(request):
     #leo csv
-    data = pd.read_csv('/home/sebastian/Holberton/majorityreportmedellin/app/data.csv')
+    data = pd.read_csv(path + '/data.csv')
     #creo key en context que contengan cada una de las fgráficas
     context = {'chart_1_title': "Cantidad de hurtos a personas por año desde el 2003",
                'chart_1':"",
