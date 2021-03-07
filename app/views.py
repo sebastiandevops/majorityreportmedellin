@@ -8,6 +8,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse
 from django import template
+bar_chart = __import__('plotly_functions').bar_chart
+line_chart = __import__('plotly_functions').line_chart
 
 #@login_required(login_url="/login/")
 def index(request):
@@ -21,7 +23,10 @@ def index(request):
     return HttpResponse(html_template.render(context, request))
 
 def medellincharts(request):
+    #leo csv
+    #creo key en context que contengan cada una de las fgráficas
     context = {}
+    #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['segment'] = 'medellincharts'
 
     html_template = loader.get_template( 'medellincharts.html' )
