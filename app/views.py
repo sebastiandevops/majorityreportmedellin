@@ -9,8 +9,8 @@ from django.template import loader
 from django.http import HttpResponse
 from django import template
 import pandas as pd
-bar_chart = __import__('plotly_functions').bar_chart
-line_chart = __import__('plotly_functions').line_chart
+bar_chart = __import__('/home/sebastian/Holberton/majorityreportmedellin/app/plotly_functions.py').bar_chart
+line_chart = __import__('/home/sebastian/Holberton/majorityreportmedellin/app/plotly_functions.py').line_chart
 
 #@login_required(login_url="/login/")
 def index(request):
