@@ -12,10 +12,11 @@ from re import X
 import pandas as pd
 import plotly.express as px
 from plotly.offline import plot
+from app.plotly_functions import bar_chart
+from app.plotly_functions import line_chart
 import os
 path = os.path.dirname(__file__)
-bar_chart = __import__('/plotly_functions.py').bar_chart
-line_chart = __import__('/plotly_functions.py').line_chart
+
 
 def index(request):
 
