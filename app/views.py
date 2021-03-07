@@ -77,7 +77,7 @@ def line_chart(df, x_data, color, y_data):
 
 def index(request):
 
-    data = pd.read_csv('/app/data.csv')
+    data = pd.read_csv('/data.csv')
     context = {'title': 'Majority Report Medellín',
                'subtitle': 'Bienvenidos',
                'tab_1_title':"Acerca de",
