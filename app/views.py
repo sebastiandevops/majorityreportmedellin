@@ -96,7 +96,7 @@ def index(request):
 
 def medellincharts(request):
     #leo csv
-    data = pd.read_csv('app/datos.csv')
+    data = pd.read_csv('/home/sebastian/Holberton/majorityreportmedellin/app/data.csv')
     #creo key en context que contengan cada una de las fgráficas
     context = {}
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
