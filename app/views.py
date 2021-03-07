@@ -78,7 +78,7 @@ def line_chart(df, x_data, color, y_data):
 def index(request):
     import os
 
-    path = os.path.basename(__file__)
+    path = os.path.dirname(__file__)
     data = pd.read_csv(path+'/data.csv')
     context = {'title': 'Majority Report Medellín',
                'subtitle': 'Bienvenidos',
