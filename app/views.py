@@ -46,7 +46,7 @@ def medellincharts(request):
     #creo key en context que contengan cada una de las fgráficas
     context = {'chart_1_title': "Cantidad de hurtos a personas por año desde el 2003",
                'chart_1':"",
-               'chart_2_title':"Cantidad de hurtos a personas desde el año 2003 mes a mes",
+               'chart_2_title':"Cantidad de hurtos a personas por barrio desde el 2003",
                'chart_2':"",
                'chart_3_title': "Cantidad de hurtos",
                'chart_3':"",
@@ -60,6 +60,7 @@ def medellincharts(request):
                'chart_7': ""}
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['chart_1'] = bar_chart(data, 'año', 'cantidad')
+    context['chart_2'] = bar_chart(data, 'barrio', 'cantidad')
     context['segment'] = 'medellincharts'
 
     html_template = loader.get_template( 'medellincharts.html' )
