@@ -88,11 +88,12 @@ def index(request):
                'tab_2_text': "Acá explicamos otra cosa",
                'tab_3_title':"Contacto",
                'tab_3_text': "Estoy inventando",
-               'chart_1_title': "Gráfica 1 super bacana",
+               'chart_1_title': "Cantidad de hurtos a personas por sexo de la víctima",
                'chart_1':"",
-               'chart_2_title':"Gráfica 2 más genial",
+               'chart_2_title':"Cantidad de hurtos a personas desde el año 2003 mes a mes",
                'chart_2':""}
     context['chart_1'] = bar_chart(data, 'sexo', 'cantidad')
+    context['chart_2'] = line_chart(data, 'año', 'mes', 'cantidad')
     context['segment'] = 'index'
 
     html_template = loader.get_template( 'index.html' )
