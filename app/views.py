@@ -92,7 +92,7 @@ def index(request):
                'chart_1':"",
                'chart_2_title':"Gráfica 2 más genial",
                'chart_2':""}
-    context['chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
+    context['chart_1'] = bar_chart(data, 'sexo', 'cantidad')
     context['segment'] = 'index'
 
     html_template = loader.get_template( 'index.html' )
