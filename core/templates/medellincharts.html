@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Charts Morris {% endblock %}
+{% block title %} Hurto a personas {% endblock %}
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}
@@ -19,12 +19,12 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Morris Chart</h5>
+                            <h5 class="m-b-10">Hurto a personas</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="javascript:">Chart</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:">Morris Chart</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Hurto a personas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,70 +39,84 @@
                     <div class="col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Bar [ Simple ] Chart</h5>
+                                <h5> {{ chart_1_title }} </h5>
                             </div>
                             <div class="card-block">
+                                {% autoescape off %}
                                 {{ chart_1 }}
+                                {% endautoescape %}
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Bar [ Stacked ] Chart</h5>
+                                <h5> {{ chart_2_title }} </h5>
                             </div>
                             <div class="card-block">
-                                <!-- <div id="morris-bar-stacked-chart" style="height:300px"></div> -->
+                                {% autoescape off %}
+                                {{ chart_2 }}
+                                {% endautoescape %}
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Line [ Angle ] Chart</h5>
+                                <h5> {{ chart_3_title  }} </h5>
                             </div>
                             <div class="card-block">
-                                <div id="morris-area-chart" style="height:300px"></div>
+                                {% autoescape off %}
+                                {{ chart_3 }}
+                                {% endautoescape %}
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Area [ Smooth ] Chart</h5>
+                                <h5> {{ chart_4_title }} </h5>
                             </div>
                             <div class="card-block">
-                                <div id="morris-area-curved-chart" style="height:300px"></div>
+                                {% autoescape off %}
+                                {{ chart_4 }}
+                                {% endautoescape %}
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Line [ Angle ] Chart</h5>
+                                <h5> {{ chart_5_title }}</h5>
                             </div>
                             <div class="card-block">
-                                <div id="morris-line-chart" class="ChartShadow" style="height:300px"></div>
+                                {% autoescape off %}
+                                {{ chart_5 }}
+                                {% endautoescape %}
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Line [ Smooth ] Chart</h5>
+                                <h5> {{ chart_6_title }} </h5>
                             </div>
                             <div class="card-block">
-                                <div id="morris-line-smooth-chart" class="ChartShadow" style="height:300px"></div>
+                                {% autoescape off %}
+                                {{ chart_6 }}
+                                {% endautoescape %}
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Donut Chart</h5>
+                                <h5> {{ chart_7_title }}</h5>
                             </div>
                             <div class="card-block">
-                                <div id="morris-donut-chart" style="height:300px"></div>
+                                {% autoescape off %}
+                                {{ chart_7 }}
+                                {% endautoescape %}
                             </div>
                         </div>
                     </div>
