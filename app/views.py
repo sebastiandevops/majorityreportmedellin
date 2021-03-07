@@ -77,6 +77,7 @@ def line_chart(df, x_data, color, y_data):
 
 def index(request):
 
+    data = pd.read_csv('/home/sebastian/Holberton/majorityreportmedellin/app/data.csv')
     context = {'title': 'Majority Report Medellín',
                'subtitle': 'Bienvenidos',
                'tab_1_title':"Acerca de",
@@ -89,6 +90,7 @@ def index(request):
                'chart_1':"",
                'chart_2_title':"Gráfica 2 más genial",
                'chart_2':""}
+    context['chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['segment'] = 'index'
 
     html_template = loader.get_template( 'index.html' )
