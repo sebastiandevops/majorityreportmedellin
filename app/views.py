@@ -14,8 +14,8 @@ import plotly.express as px
 from plotly.offline import plot
 import os
 path = os.path.dirname(__file__)
-bar_chart = __import__(path + '/plotly_functions.py').bar_chart
-line_chart = __import__(path + '/plotly_functions.py').line_chart
+bar_chart = __import__('/plotly_functions.py').bar_chart
+line_chart = __import__('/plotly_functions.py').line_chart
 
 def index(request):
 
