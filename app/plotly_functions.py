@@ -31,7 +31,14 @@ def bar_chart(df, x_data, y_data, color=None):
                 y=y_data,
                 color=color,
                 template="plotly_white",
-                color_discrete_sequence=px.colors.qualitative.Pastel)
+                color_discrete_sequence=px.colors.qualitative.Pastel,
+                category_orders={"dia": ["lunes",
+                                         "martes",
+                                         "miércoles",
+                                         "jueves",
+                                         "viernes",
+                                         "sábado",
+                                         "domingo"]})
 
     plot_div = plot(fig, output_type='div')
     return plot_div
@@ -61,7 +68,14 @@ def line_chart(df, x_data, color, y_data):
                 y=y_data,
                 color=x_data,
                 template="plotly_white",
-                color_discrete_sequence=px.colors.qualitative.Pastel)
+                color_discrete_sequence=px.colors.qualitative.Pastel,
+                category_orders={"dia": ["lunes",
+                                         "martes",
+                                         "miércoles",
+                                         "jueves",
+                                         "viernes",
+                                         "sábado",
+                                         "domingo"]})
 
     plot_div = plot(fig, output_type='div')
     return plot_div
