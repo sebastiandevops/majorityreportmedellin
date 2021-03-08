@@ -59,7 +59,7 @@ def medellincharts(request):
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     #context['chart_1'] = bar_chart(data, 'año', 'cantidad')
     #context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad')
-    context['segment'] = load_template
+    context['segment'] = 'medellincharts.html'
 
     html_template = loader.get_template( 'medellincharts.html')
     return HttpResponse(html_template.render(context, request))
