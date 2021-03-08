@@ -44,7 +44,7 @@ def bar_chart_animation(df, x_data, y_data, color=None, animation_frame=None):
                                          "domingo"]},
                 animation_frame=animation_frame)
     fig["layout"].pop("updatemenus")
-    fig['layout']['sliders'][0]['pad']=dict(r= 10, t= 150,)
+    fig['layout']['sliders'][0]['pad']=dict(r= 10, t= 200,)
     plot_div = plot(fig, output_type='div')
     return plot_div
 
