@@ -57,7 +57,7 @@ def medellincharts(request):
                'chart_7': ""}
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['chart_1'] = bar_chart(data, 'año', 'cantidad')
-    context['chart_2'] = bar_chart(data, 'barrio', 'cantidad')
+    context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad')
     context['segment'] = 'medellincharts'
 
     html_template = loader.get_template( 'medellincharts.html' )
