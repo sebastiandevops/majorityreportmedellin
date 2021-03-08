@@ -61,7 +61,7 @@ def medellincharts(request):
     context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad')
     context['segment'] = 'medellincharts'
 
-    html_template = loader.get_template( 'medellincharts.html' )
+    html_template = loader.get_template( 'medellincharts.html')
     return HttpResponse(html_template.render(context, request))
 
 #@login_required(login_url="/login/")
