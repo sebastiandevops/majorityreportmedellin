@@ -29,7 +29,7 @@ def index(request):
                'tab_2_text': "Acá explicamos otra cosa",
                'tab_3_title':"Contacto",
                'tab_3_text': "Estoy inventando",
-               'chart_1_title': "Cantidad de hurtos a personas por sexo de la víctima",
+               'chart_1_title': "Cantidad de hurtos a personas por sexo de la víctima desde 2003",
                'chart_1':"",
                'chart_2_title':"Cantidad de hurtos a personas mes a mes desde el 2003",
                'chart_2':""}
@@ -60,8 +60,8 @@ def medellincharts(request):
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['chart_1'] = bar_chart(data, 'año', 'cantidad')
     context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad')
-    context['chart_2'] = bar_chart(data, 'arma_medio', 'cantidad')
-    context['chart_2'] = line_chart(data, 'hora', 'dia', 'cantidad')
+    context['chart_3'] = bar_chart(data, 'arma_medio', 'cantidad')
+    context['chart_4'] = line_chart(data, 'hora', 'dia', 'cantidad')
     context['segment'] = 'medellincharts.html'
 
     html_template = loader.get_template( 'medellincharts.html')
