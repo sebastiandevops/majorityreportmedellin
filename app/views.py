@@ -34,7 +34,7 @@ def index(request):
                'chart_2_title':"Cantidad de hurtos a personas mes a mes desde el 2003",
                'chart_2':""}
     context['chart_1'] = bar_chart(data, 'sexo', 'cantidad', animation_frame='año')
-    context['chart_2'] = line_chart(data, 'año', 'mes', 'cantidad', animation_frame='año')
+    context['chart_2'] = line_chart(data, 'año', 'mes', 'cantidad')
     context['segment'] = 'index'
 
     html_template = loader.get_template( 'index.html' )
@@ -61,7 +61,7 @@ def medellincharts(request):
     context['chart_1'] = bar_chart(data, 'año', 'cantidad', animation_frame='año')
     context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad', animation_frame='año')
     context['chart_3'] = bar_chart(data, 'arma_medio', 'cantidad', animation_frame='año')
-    context['chart_4'] = line_chart(data, 'dia', 'hora', 'cantidad', animation_frame='año')
+    context['chart_4'] = line_chart(data, 'dia', 'hora', 'cantidad')
     context['chart_5'] = bar_chart(data, 'semana', 'cantidad', animation_frame='año')
     context['chart_6'] = bar_chart(data, 'hora', 'cantidad', animation_frame='año')
     context['chart_7'] = bar_chart(data, 'modalidad', 'cantidad', animation_frame='año')
