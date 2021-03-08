@@ -14,6 +14,7 @@ import plotly.express as px
 from plotly.offline import plot
 from app.plotly_functions import bar_chart
 from app.plotly_functions import line_chart
+from app.plotly_functions import bar_chart_animation
 import os
 
 path = os.path.dirname(__file__)
@@ -58,13 +59,13 @@ def medellincharts(request):
                'chart_7_title': "Cantidad de hurtos por modalidad empleada",
                'chart_7': ""}
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
-    context['chart_1'] = bar_chart(data, 'año', 'cantidad', animation_frame='año')
-    context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad', animation_frame='año')
-    context['chart_3'] = bar_chart(data, 'arma_medio', 'cantidad', animation_frame='año')
+    context['chart_1'] = bar_chart(data, 'año', 'cantidad')
+    context['chart_2'] = bar_chart_animation(data, 'nombre_barrio', 'cantidad', animation_frame='año')
+    context['chart_3'] = bar_chart_animation(data, 'arma_medio', 'cantidad', animation_frame='año')
     context['chart_4'] = line_chart(data, 'dia', 'hora', 'cantidad')
-    context['chart_5'] = bar_chart(data, 'semana', 'cantidad', animation_frame='año')
-    context['chart_6'] = bar_chart(data, 'hora', 'cantidad', animation_frame='año')
-    context['chart_7'] = bar_chart(data, 'modalidad', 'cantidad', animation_frame='año')
+    context['chart_5'] = bar_chart_animation(data, 'semana', 'cantidad', animation_frame='año')
+    context['chart_6'] = bar_chart_animation(data, 'hora', 'cantidad', animation_frame='año')
+    context['chart_7'] = bar_chart_animation(data, 'modalidad', 'cantidad', animation_frame='año')
     context['segment'] = 'medellincharts.html'
 
     html_template = loader.get_template( 'medellincharts.html')
