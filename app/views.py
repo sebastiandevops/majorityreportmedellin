@@ -49,7 +49,7 @@ def medellincharts(request):
                'chart_2':"",
                'chart_3_title': "Cantidad de hurtos por arma utilizada",
                'chart_3':"",
-               'chart_4_title': "Cantidad de hurtos por hora durante los días de la semana donde 0 es lunes",
+               'chart_4_title': "Cantidad de hurtos por hora durante los días de la semana",
                'chart_4': "",
                'chart_5_title': "Cantidad de hurtos por semana durante el año desde el 2003",
                'chart_5': "",
