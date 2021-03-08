@@ -39,6 +39,7 @@ def index(request):
     html_template = loader.get_template( 'index.html' )
     return HttpResponse(html_template.render(context, request))
 
+
 def medellincharts(request):
     #creo key en context que contengan cada una de las fgráficas
     context = {'chart_1_title': "Cantidad de hurtos a personas por año desde el 2003",
