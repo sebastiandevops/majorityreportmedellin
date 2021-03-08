@@ -43,25 +43,28 @@ def index(request):
 
 def medellincharts(request):
     #creo key en context que contengan cada una de las fgráficas
-    context = {'chart_1_title': "Cantidad de hurtos a personas por año desde el 2003",
+    context = {'chart_1_title': "Cantidad de hurtos por año desde el 2003",
                'chart_1':"",
-               'chart_2_title':"Cantidad de hurtos a personas por barrio desde el 2003",
+               'chart_2_title':"Cantidad de hurtos por barrio desde el 2003",
                'chart_2':"",
-               'chart_3_title': "Cantidad de hurtos a personas por arma utilizada",
+               'chart_3_title': "Cantidad de hurtos por arma utilizada",
                'chart_3':"",
-               'chart_4_title': "Cantidad de hurtos a personas por hora durante los días de la semana",
+               'chart_4_title': "Cantidad de hurtos por hora durante los días de la semana",
                'chart_4': "",
-               'chart_5_title': "Cantidad de hurtos",
+               'chart_5_title': "Cantidad de hurtos por semana durante el año desde el 2003",
                'chart_5': "",
-               'chart_6_title': "Cantidad de hurtos",
+               'chart_6_title': "Cantidad de hurtos por hora desde el 2003",
                'chart_6': "",
-               'chart_7_title': "Cantidad de hurtos",
+               'chart_7_title': "Cantidad de hurtos por modalidad empleada",
                'chart_7': ""}
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['chart_1'] = bar_chart(data, 'año', 'cantidad')
     context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad')
     context['chart_3'] = bar_chart(data, 'arma_medio', 'cantidad')
-    context['chart_4'] = line_chart(data, 'hora', 'dia', 'cantidad')
+    context['chart_4'] = line_chart(data, 'dia', 'hora', 'cantidad')
+    context['chart_5'] = bar_chart(data, 'semana', 'cantidad')
+    context['chart_6'] = bar_chart(data, 'hora', 'cantidad')
+    context['chart_7'] = bar_chart(data, 'modalidad', 'cantidad')
     context['segment'] = 'medellincharts.html'
 
     html_template = loader.get_template( 'medellincharts.html')
