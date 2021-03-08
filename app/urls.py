@@ -10,7 +10,7 @@ urlpatterns = [
 
     # The home page
     path('', views.index, name='home'),
-    path('medellincharts.html', views.medellincharts, name='medellincharts'),
+    path('medellincharts/', views.medellincharts),
 
     # Matches any html file
     #re_path(r'^.*\.*', views.pages, name='pages'),
