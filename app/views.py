@@ -15,6 +15,7 @@ from plotly.offline import plot
 from app.plotly_functions import bar_chart
 from app.plotly_functions import line_chart
 import os
+
 path = os.path.dirname(__file__)
 data = pd.read_csv(path + '/data.csv')
 
@@ -65,24 +66,24 @@ def medellincharts(request):
     return HttpResponse(html_template.render(context, request))
 
 #@login_required(login_url="/login/")
-def pages(request):
-    context = {}
+#def pages(request):
+#    context = {}
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
-    try:
+#    try:
 
-        load_template      = request.path.split('/')[-1]
-        context['segment'] = load_template
+#        load_template      = request.path.split('/')[-1]
+#        context['segment'] = load_template
 
-        html_template = loader.get_template( load_template )
-        return HttpResponse(html_template.render(context, request))
+#        html_template = loader.get_template( load_template )
+#        return HttpResponse(html_template.render(context, request))
 
-    except template.TemplateDoesNotExist:
+#    except template.TemplateDoesNotExist:
 
-        html_template = loader.get_template( 'page-404.html' )
-        return HttpResponse(html_template.render(context, request))
+#        html_template = loader.get_template( 'page-404.html' )
+#        return HttpResponse(html_template.render(context, request))
 
-    except:
-
-        html_template = loader.get_template( 'page-500.html' )
-        return HttpResponse(html_template.render(context, request))
+#    except:
+#
+#        html_template = loader.get_template( 'page-500.html' )
+#        return HttpResponse(html_template.render(context, request))
