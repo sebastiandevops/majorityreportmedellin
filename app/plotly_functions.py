@@ -42,7 +42,7 @@ def bar_chart(df, x_data, y_data, color=None, animation_frame=None):
                                          "sábado",
                                          "domingo"]},
                 animation_frame=animation_frame)
-
+    fig["layout"].pop("updatemenus")
     plot_div = plot(fig, output_type='div')
     return plot_div
 
