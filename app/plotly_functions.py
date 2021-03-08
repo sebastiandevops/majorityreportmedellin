@@ -17,12 +17,13 @@ def bar_chart(df, x_data, y_data, color=None, animation_frame=None):
     Returns:
         Object: plot_div  object
     """
+    index_list = list(set(animation_frame, x_data, color))
     if color is not None:
-        pivot_data = df.pivot_table(index=[ x_data, color],
+        pivot_data = df.pivot_table(index=index_list,
                                     values=y_data,
                                     aggfunc='sum').reset_index()
     else:
-        pivot_data = df.pivot_table(index=[animation_frame,x_data],
+        pivot_data = df.pivot_table(index=index_list,
                                     values=y_data,
                                     aggfunc='sum').reset_index()
 
@@ -58,7 +59,8 @@ def line_chart(df, x_data, color, y_data, animation_frame):
     Returns:
         Object: plot_div  object
     """
-    pivot_data = df.pivot_table(index=[animation_frame, x_data, color],
+    index_list = list(set(x_data, color, animation_frame))
+    pivot_data = df.pivot_table(index=index_list,
                                 values=y_data,
                                 aggfunc='sum')
 
