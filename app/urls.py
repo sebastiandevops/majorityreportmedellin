@@ -13,6 +13,6 @@ urlpatterns = [
     path('/medellincharts.html', views.medellincharts, name='medellincharts'),
 
     # Matches any html file
-    re_path(r'^.*\.*', views.pages, name='pages'),
+    #re_path(r'^.*\.*', views.pages, name='pages'),
 
 ]
