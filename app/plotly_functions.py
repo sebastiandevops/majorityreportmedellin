@@ -18,11 +18,11 @@ def bar_chart(df, x_data, y_data, color=None, animation_frame=None):
         Object: plot_div  object
     """
     if color is not None:
-        pivot_data = df.pivot_table(index=[animation_frame, x_data, color],
+        pivot_data = df.pivot_table(index=[ x_data, color],
                                     values=y_data,
                                     aggfunc='sum').reset_index()
     else:
-        pivot_data = df.pivot_table(index=x_data,
+        pivot_data = df.pivot_table(index=[animation_frame,x_data],
                                     values=y_data,
                                     aggfunc='sum').reset_index()
 
