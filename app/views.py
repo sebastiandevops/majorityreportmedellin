@@ -33,7 +33,7 @@ def index(request):
                'chart_1':"",
                'chart_2_title':"Cantidad de hurtos a personas mes a mes desde el 2003",
                'chart_2':""}
-    context['chart_1'] = bar_chart(data, 'sexo', 'cantidad')
+    context['chart_1'] = bar_chart(data, 'sexo', 'cantidad', 'año')
     context['chart_2'] = line_chart(data, 'año', 'mes', 'cantidad')
     context['segment'] = 'index'
 

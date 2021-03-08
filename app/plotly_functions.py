@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.express as px
 from plotly.offline import plot
 
-def bar_chart(df, x_data, y_data, color=None):
+def bar_chart(df, x_data, y_data, color=None, animation_frame=None):
     """Funtion to return plotly object and displays a bar chart
 
     Args:
@@ -18,7 +18,7 @@ def bar_chart(df, x_data, y_data, color=None):
         Object: plot_div  object
     """
     if color is not None:
-        pivot_data = df.pivot_table(index=[x_data, color],
+        pivot_data = df.pivot_table(index=[animation_frame, x_data, color],
                                     values=y_data,
                                     aggfunc='sum').reset_index()
     else:
@@ -38,7 +38,8 @@ def bar_chart(df, x_data, y_data, color=None):
                                          "jueves",
                                          "viernes",
                                          "sábado",
-                                         "domingo"]})
+                                         "domingo"]},
+                animation_frame=animation_frame)
 
     plot_div = plot(fig, output_type='div')
     return plot_div
