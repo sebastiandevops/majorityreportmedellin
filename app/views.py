@@ -16,11 +16,10 @@ from app.plotly_functions import bar_chart
 from app.plotly_functions import line_chart
 import os
 path = os.path.dirname(__file__)
-
+data = pd.read_csv(path + '/data.csv')
 
 def index(request):
 
-    data = pd.read_csv(path + '/data.csv')
     context = {'title': 'Majority Report Medellín',
                'subtitle': 'Bienvenidos',
                'tab_1_title':"Acerca de",
@@ -41,8 +40,6 @@ def index(request):
     return HttpResponse(html_template.render(context, request))
 
 def medellincharts(request):
-    #leo csv
-    data = pd.read_csv(path + '/data.csv')
     #creo key en context que contengan cada una de las fgráficas
     context = {'chart_1_title': "Cantidad de hurtos a personas por año desde el 2003",
                'chart_1':"",
