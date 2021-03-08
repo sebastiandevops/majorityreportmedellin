@@ -47,9 +47,9 @@ def medellincharts(request):
                'chart_1':"",
                'chart_2_title':"Cantidad de hurtos a personas por barrio desde el 2003",
                'chart_2':"",
-               'chart_3_title': "Cantidad de hurtos",
+               'chart_3_title': "Cantidad de hurtos a personas por arma utilizada",
                'chart_3':"",
-               'chart_4_title': "Cantidad de hurtos",
+               'chart_4_title': "Cantidad de hurtos a personas por hora durante los días de la semana",
                'chart_4': "",
                'chart_5_title': "Cantidad de hurtos",
                'chart_5': "",
@@ -60,6 +60,8 @@ def medellincharts(request):
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['chart_1'] = bar_chart(data, 'año', 'cantidad')
     context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad')
+    context['chart_2'] = bar_chart(data, 'arma_medio', 'cantidad')
+    context['chart_2'] = line_chart(data, 'hora', 'dia', 'cantidad')
     context['segment'] = 'medellincharts.html'
 
     html_template = loader.get_template( 'medellincharts.html')
