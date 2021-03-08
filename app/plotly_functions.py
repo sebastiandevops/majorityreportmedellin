@@ -45,7 +45,7 @@ def bar_chart(df, x_data, y_data, color=None, animation_frame=None):
     return plot_div
 
 
-def line_chart(df, x_data, color, y_data):
+def line_chart(df, x_data, color, y_data, animation_frame):
     """Funtion to return plotly object and displays a line chart
 
     Args:
@@ -58,7 +58,7 @@ def line_chart(df, x_data, color, y_data):
     Returns:
         Object: plot_div  object
     """
-    pivot_data = df.pivot_table(index=[x_data, color],
+    pivot_data = df.pivot_table(index=[animation_frame, x_data, color],
                                 values=y_data,
                                 aggfunc='sum')
 
@@ -76,7 +76,8 @@ def line_chart(df, x_data, color, y_data):
                                          "jueves",
                                          "viernes",
                                          "sábado",
-                                         "domingo"]})
+                                         "domingo"]},
+                animation_frame=animation_frame)
 
     plot_div = plot(fig, output_type='div')
     return plot_div
