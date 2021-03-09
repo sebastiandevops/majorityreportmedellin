@@ -19,6 +19,7 @@ import os
 
 path = os.path.dirname(__file__)
 data = pd.read_csv(path + '/data.csv')
+
 instructions = "La librería utilizada para desplegar las gráficas"\
                " es Plotly, la cual es una herramientas de visualización y"\
                " análisis de datos en línea de manera interactiva."\
@@ -34,18 +35,25 @@ instructions = "La librería utilizada para desplegar las gráficas"\
                " especifican los años a los que corresponde el color de cada"\
                " linea, esta columna le permitira seleccionar o deseleccionar"\
                " los años a visualizar dando click en el año deseado."
+
 about = 'Majority Report es una iniciativa académica que surge con el'\
         ' proposito de crear un portal donde los usuarios puedan'\
-        ' visualizar los índices de criminalidad en la ciudad de Medellín'\
-        ' de manera interactiva. Los datos utilizados para generar las'\
+        ' visualizar de manera interactiva los índices de criminalidad'\
+        ' en la ciudad de Medellín. Los datos utilizados para generar las'\
         ' gráficas desplegadas fueron tomados del portal de datos abiertos'\
         ' del Ministerio de Tecnologías de la Información y las'\
-        ' Comunicaciones. Los datos utilizados fueron suministrados'\
-        ' al Ministerio por la Secretaría de Seguridad y Convivencia de'\
-        ' la Alcaldía de Medellín y contienen la información de las'\
+        ' Comunicaciones y fueron suministrados'\
+        ' por la Secretaría de Seguridad y Convivencia de'\
+        ' la Alcaldía de Medellín. Los datos contienen la información de las'\
         ' denuncias efectivamente realizadas por el delito "hurto a personas"'\
-        ' desde el año 2003 en la ciudad de Medellín. La última actualización'\
-        ' de los datos se realizó el 23 de diciembre de 2020.'
+        ' desde el año 2003. La última actualización de la base se realizó'\
+        ' el 23 de diciembre de 2020.'
+
+contact = 'Mi nombre es Sebastián Valencia Sierra y pueden encontrarme en'\
+          ' redes en los siguientes enlaces:'\
+          ' Github: https://github.com/sebasvalencia726\n'\
+          ' Linledin: https://www.linkedin.com/in/sebastianvalenciasierra/\n'\
+
 def index(request):
     #escribo una cosa aqui
     context = {'title': 'Majority Report Medellín',
@@ -55,7 +63,7 @@ def index(request):
                'tab_2_title':"Instrucciones",
                'tab_2_text': instructions,
                'tab_3_title':"Contacto",
-               'tab_3_text': "Estoy inventando",
+               'tab_3_text': contact,
                'chart_1_title': "Cantidad de hurtos a personas por sexo de la víctima desde 2003",
                'chart_1':"",
                'chart_2_title':"Cantidad de hurtos a personas mes a mes desde el 2003",
