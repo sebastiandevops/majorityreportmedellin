@@ -21,17 +21,28 @@ path = os.path.dirname(__file__)
 data = pd.read_csv(path + '/data.csv')
 instructions = "La librería utilizada para desplegar las gráficas"\
                " es Plotly, la cual es una herramientas de visualización y"\
-               " análisis de datos en línea."\
+               " análisis de datos en línea de manera interactiva."\
                " Plotly proporciona herramientas de gráficos, análisis y"\
                " estadísticas en línea para individuos y colaboración, así"\
                " como bibliotecas de gráficos científicos para Python, R,"\
-               " MATLAB, Perl, Julia, Arduino y REST."
+               " MATLAB, Perl, Julia, Arduino y REST.\n"\
+               " En las gráficas de barras podrá seleccionar el año"\
+               " a visualizar deslizando el cursor por la barra inferior,"\
+               " igualmente podrá activar el zoom desde los botónes"\
+               " superiores o marcando la zona a encuadrar con el cursor.\n"\
+               "Las gráficas de línes contienen una columna donde se"\
+               " especifican los años a los que corresponde el color de cada"\
+               " linea, esta columna le permitira seleccionar o deseleccionar"\
+               " los años a visualizar dando click en el año correspondiente."
+about = 'Esta es una página donde encontrará una forma de visualizar los'\
+        ' índices de criminalidad en la ciudad de Medellín de manera'\
+        ' interactiva'
 def index(request):
     #escribo una cosa aqui
     context = {'title': 'Majority Report Medellín',
                'subtitle': 'Bienvenidos',
                'tab_1_title':"Acerca de",
-               'tab_1_text': 'Esta es una página donde encontrará una forma de visualizar los índices de criminalidad en la ciudad de Medellín de manera interactiva',
+               'tab_1_text': about,
                'tab_2_title':"Instrucciones",
                'tab_2_text': instructions,
                'tab_3_title':"Contacto",
@@ -40,7 +51,8 @@ def index(request):
                'chart_1':"",
                'chart_2_title':"Cantidad de hurtos a personas mes a mes desde el 2003",
                'chart_2':""}
-    context['chart_1'] = bar_chart_animation(data, 'sexo', 'cantidad', animation_frame='año')
+    context['chart_1'] = bar_chart_animation(data, 'sexo', 'cantidad',
+                                             animation_frame='año')
     context['chart_2'] = line_chart(data, 'año', 'mes', 'cantidad')
     context['segment'] = 'index'
 
@@ -69,8 +81,10 @@ def medellincharts(request):
     context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad')
     context['chart_3'] = bar_chart(data, 'arma_medio', 'cantidad')
     context['chart_4'] = line_chart(data, 'dia', 'hora', 'cantidad')
-    context['chart_5'] = bar_chart_animation(data, 'semana', 'cantidad', animation_frame='año')
-    context['chart_6'] = bar_chart_animation(data, 'hora', 'cantidad', animation_frame='año')
+    context['chart_5'] = bar_chart_animation(data, 'semana', 'cantidad',
+                                             animation_frame='año')
+    context['chart_6'] = bar_chart_animation(data, 'hora', 'cantidad',
+                                             animation_frame='año')
     context['chart_7'] = bar_chart(data, 'modalidad', 'cantidad')
     context['segment'] = 'medellincharts.html'
 
