@@ -33,10 +33,19 @@ instructions = "La librería utilizada para desplegar las gráficas"\
                "Las gráficas de línes contienen una columna donde se"\
                " especifican los años a los que corresponde el color de cada"\
                " linea, esta columna le permitira seleccionar o deseleccionar"\
-               " los años a visualizar dando click en el año correspondiente."
-about = 'Esta es una página donde encontrará una forma de visualizar los'\
-        ' índices de criminalidad en la ciudad de Medellín de manera'\
-        ' interactiva'
+               " los años a visualizar dando click en el año deseado."
+about = 'Majority Report es una iniciativa académica que surge con el'\
+        ' proposito de crear un portal donde los usuarios puedan'\
+        ' visualizar los índices de criminalidad en la ciudad de Medellín'\
+        ' de manera interactiva. Los datos utilizados para generar las'\
+        ' gráficas desplegadas fueron tomados del portal de datos abiertos'\
+        ' del Ministerio de Tecnologías de la Información y las'\
+        ' Comunicaciones. Los datos utilizados fueron suministrados'\
+        ' al Ministerio por la Secretaría de Seguridad y Convivencia de'\
+        ' la Alcaldía de Medellín y contienen la información de las'\
+        ' denuncias efectivamente realizadas por el delito "hurto a personas"'\
+        ' desde el año 2003 en la ciudad de Medellín. La última actualización'\
+        ' de los datos se realizó el 23 de diciembre de 2020.'
 def index(request):
     #escribo una cosa aqui
     context = {'title': 'Majority Report Medellín',
