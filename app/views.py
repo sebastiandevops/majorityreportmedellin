@@ -19,7 +19,13 @@ import os
 
 path = os.path.dirname(__file__)
 data = pd.read_csv(path + '/data.csv')
-
+instructions = "La librería utilizada para desplegar las gráficas"\
+               " es Plotly, la cual es una herramientas de visualización y"\
+               " análisis de datos en línea."\
+               " Plotly proporciona herramientas de gráficos, análisis y"\
+               " estadísticas en línea para individuos y colaboración, así"\
+               " como bibliotecas de gráficos científicos para Python, R,"\
+               " MATLAB, Perl, Julia, Arduino y REST."
 def index(request):
     #escribo una cosa aqui
     context = {'title': 'Majority Report Medellín',
@@ -27,7 +33,7 @@ def index(request):
                'tab_1_title':"Acerca de",
                'tab_1_text': 'Esta es una página donde encontrará una forma de visualizar los índices de criminalidad en la ciudad de Medellín de manera interactiva',
                'tab_2_title':"Instrucciones",
-               'tab_2_text': "Acá explicamos otra cosa",
+               'tab_2_text': instructions,
                'tab_3_title':"Contacto",
                'tab_3_text': "Estoy inventando",
                'chart_1_title': "Cantidad de hurtos a personas por sexo de la víctima desde 2003",
