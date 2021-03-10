@@ -96,14 +96,14 @@ def medellincharts(request):
                'chart_7': ""}
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['chart_1'] = bar_chart(data, 'año', 'cantidad')
-    context['chart_2'] = bar_chart_h(data, 'cantidad', 'nombre_barrio')
-    context['chart_3'] = bar_chart_h(data, 'cantidad', 'arma_medio')
+    context['chart_2'] = bar_chart_h(data, 'nombre_barrio', 'cantidad')
+    context['chart_3'] = bar_chart_h(data, 'arma_medio', 'cantidad')
     context['chart_4'] = line_chart(data, 'dia', 'hora', 'cantidad')
     context['chart_5'] = bar_chart_animation(data, 'semana', 'cantidad',
                                              animation_frame='año')
     context['chart_6'] = bar_chart_animation(data, 'hora', 'cantidad',
                                              animation_frame='año')
-    context['chart_7'] = bar_chart_h(data, 'cantidad', 'modalidad')
+    context['chart_7'] = bar_chart_h(data, 'modalidad', 'cantidad')
     context['segment'] = 'medellincharts.html'
 
     html_template = loader.get_template( 'medellincharts.html')

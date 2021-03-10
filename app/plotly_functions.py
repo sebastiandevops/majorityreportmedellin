@@ -106,8 +106,8 @@ def bar_chart_h(df, x_data, y_data, color=None):
                                     aggfunc='sum').reset_index()
 
     fig = px.bar(pivot_data,
-                x=x_data,
-                y=y_data,
+                x=y_data,
+                y=x_data,
                 color=color,
                 template="plotly_white",
                 color_discrete_sequence=px.colors.qualitative.Pastel,
