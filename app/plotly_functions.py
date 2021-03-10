@@ -118,8 +118,8 @@ def bar_chart_h(df, x_data, y_data, color=None):
                                          "viernes",
                                          "sábado",
                                          "domingo"]},
-                orientation='h',
-                categoryorder = 'total descending')
+                orientation='h')
+    fig.update_layout(barmode='stack', xaxis={'categoryorder':'total descending'})
     plot_div = plot(fig, output_type='div')
     return plot_div
 
