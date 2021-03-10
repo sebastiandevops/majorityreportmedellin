@@ -13,6 +13,7 @@ import pandas as pd
 import plotly.express as px
 from plotly.offline import plot
 from app.plotly_functions import bar_chart
+from app.plotly_functions import bar_chart_h
 from app.plotly_functions import line_chart
 from app.plotly_functions import bar_chart_animation
 import os
@@ -96,13 +97,13 @@ def medellincharts(request):
     #ex: context['bar_chart_1'] = bar_chart(data, 'seguridad.sexo', 'seguridad.cantidad')
     context['chart_1'] = bar_chart(data, 'año', 'cantidad')
     context['chart_2'] = bar_chart(data, 'nombre_barrio', 'cantidad')
-    context['chart_3'] = bar_chart(data, 'arma_medio', 'cantidad')
+    context['chart_3'] = bar_chart_h(data, 'arma_medio', 'cantidad')
     context['chart_4'] = line_chart(data, 'dia', 'hora', 'cantidad')
     context['chart_5'] = bar_chart_animation(data, 'semana', 'cantidad',
                                              animation_frame='año')
     context['chart_6'] = bar_chart_animation(data, 'hora', 'cantidad',
                                              animation_frame='año')
-    context['chart_7'] = bar_chart(data, 'modalidad', 'cantidad')
+    context['chart_7'] = bar_chart_h(data, 'modalidad', 'cantidad')
     context['segment'] = 'medellincharts.html'
 
     html_template = loader.get_template( 'medellincharts.html')

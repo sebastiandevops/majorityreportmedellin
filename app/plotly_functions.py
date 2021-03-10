@@ -84,6 +84,44 @@ def bar_chart(df, x_data, y_data, color=None):
     plot_div = plot(fig, output_type='div')
     return plot_div
 
+def bar_chart_h(df, x_data, y_data, color=None):
+    """Funtion to return plotly object and displays a bar chart
+
+    Args:
+        df (data frame): dataframe to be used
+        x_data (str): column to display as x axis
+        y_data (str): column to display as y axis
+        color (str, optional): Bar colors, defaults to None.
+
+    Returns:
+        Object: plot_div  object
+    """
+    if color is not None:
+        pivot_data = df.pivot_table(index=[x_data, color],
+                                    values=y_data,
+                                    aggfunc='sum').reset_index()
+    else:
+        pivot_data = df.pivot_table(index=x_data,
+                                    values=y_data,
+                                    aggfunc='sum').reset_index()
+
+    fig = px.bar(pivot_data,
+                x=x_data,
+                y=y_data,
+                color=color,
+                template="plotly_white",
+                color_discrete_sequence=px.colors.qualitative.Pastel,
+                category_orders={"dia": ["lunes",
+                                         "martes",
+                                         "miércoles",
+                                         "jueves",
+                                         "viernes",
+                                         "sábado",
+                                         "domingo"]},
+                orientation='h')
+    plot_div = plot(fig, output_type='div')
+    return plot_div
+
 
 def line_chart(df, x_data, color, y_data):
     """Funtion to return plotly object and displays a line chart
