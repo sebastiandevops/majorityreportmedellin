@@ -19,7 +19,7 @@ from app.plotly_functions import bar_chart_animation
 import os
 
 path = os.path.dirname(__file__)
-data = pd.read_csv(path + '/data_filtered.csv')
+data = pd.read_csv(path + '/data.csv')
 
 instructions = "La librería utilizada para desplegar las gráficas"\
                " es Plotly, la cual es una herramientas de visualización y"\
